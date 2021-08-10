@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import agenda.agendaapispringboot.exception.ResourceNotFoundException;
 import agenda.agendaapispringboot.model.Contact;
 import agenda.agendaapispringboot.repository.ContactRepository;
 
@@ -22,11 +23,7 @@ public class ContactService {
 
     public Contact findById(Long id) {
         Optional<Contact> contact = contactRepository.findById(id);
-        if (contact.isPresent()) {
-            return contact.get();
-        } else {
-            return null;
-        }
+        return contact.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
     public Contact save(Contact obj) {
