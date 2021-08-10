@@ -3,7 +3,10 @@ package agenda.agendaapispringboot.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import agenda.agendaapispringboot.exception.ResourceNotFoundException;
@@ -32,14 +35,23 @@ public class ContactService {
     }
 
     public void delete(Long id) {
-        contactRepository.deleteById(id);
+        try {
+            contactRepository.deleteById(id);
+        } catch (EmptyResultDataAccessException e) {
+            throw new ResourceNotFoundException(id);
+        }
+
     }
 
     public Contact update(Long id, Contact obj) {
-        Contact entity = contactRepository.getOne(id);
-        updateData(entity, obj);
-        entity = contactRepository.save(entity);
-        return entity;
+        try {
+            Contact entity = contactRepository.getOne(id);
+            updateData(entity, obj);
+            entity = contactRepository.save(entity);
+            return entity;
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException(id);
+        }
     }
 
     public void updateData(Contact entity, Contact obj) {
