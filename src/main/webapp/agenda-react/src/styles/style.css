@@ -6,7 +6,6 @@
 
 body{
     background-color: #181820;
-    overflow: hidden;
 }
 
 
@@ -168,12 +167,13 @@ table {
 .home-container main tbody div span {
     font-size: 14px;
     font-weight: 300;
+    margin-right: 24px;
 }
 
 .home-container main tbody div td{
     display: flex;
-    justify-content: space-between;
-    width: 100px;
+    justify-content: flex-start;
+    width: 252px;
     margin-bottom: 34px;
 }
 

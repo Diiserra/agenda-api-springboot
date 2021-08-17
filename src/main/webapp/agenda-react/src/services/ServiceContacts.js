@@ -1,3 +1,4 @@
+
 const API_URL = "http://localhost:8081/contacts/"
 
 
@@ -5,8 +6,8 @@ export const ServiceContact = {
 
     findAll: async () => {
         const response = await fetch(`${API_URL}`)
-        const data = await response.json()
-        return data
+        return await response.json()
+  
     },
 
     save: async (body) => {
@@ -19,8 +20,7 @@ export const ServiceContact = {
             body: JSON.stringify(body)
         }
         const response = await fetch(`${API_URL}`, header)
-        const data = await response.ok
-        return data
+        return await response.ok 
     },
 
     delete: async (id) => {
@@ -28,8 +28,7 @@ export const ServiceContact = {
             method: 'DELETE'
         }
         const response = await fetch(`${API_URL}${id}`, header)
-        const data = await response.ok
-        return data
+        return await response.ok
     },
 
     update: async (id, body) => {
@@ -42,9 +41,7 @@ export const ServiceContact = {
             body: JSON.stringify(body)
         }
         const response = await fetch(`${API_URL}${id}`, header)
-        const data = response.ok
-        return data
+        return await response.ok
     }
-
-    
+  
 }

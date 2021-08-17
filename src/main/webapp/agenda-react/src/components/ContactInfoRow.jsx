@@ -3,6 +3,9 @@ import { Link } from "react-router-dom"
 
 
 export function ContactInfoRow(props) {
+
+    const { name, fone, email } = props.contact;
+
     return (
         <tr>
             <div>
@@ -13,10 +16,10 @@ export function ContactInfoRow(props) {
                     </div>
 
                 </div>
-                <span id="name" >Name</span>
+                <span id="name" >{name}</span>
                 <td>
-                    <span style={{ color: 'lime' }}>Fone</span>
-                    <span style={{ color: 'orange' }}>Email</span>
+                    <span style={{ color: 'lime' }}>{fone}</span>
+                    <span style={{ color: 'orange' }}>{email}</span>
                 </td>
             </div>
         </tr>
