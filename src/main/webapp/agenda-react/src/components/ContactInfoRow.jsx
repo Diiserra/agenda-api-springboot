@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from "react-router-dom"
+import { OpenFormContext } from "../providers/formContext";
+import { ServiceContact } from "../services/ServiceContacts";
 
 
 export function ContactInfoRow(props) {
 
-    const { name, fone, email } = props.contact;
+    const { id, name, fone, email } = props.contact;
+
+    const { reload, setReload } = useContext(OpenFormContext)
+
+    function deleteById(id) {
+        ServiceContact.delete(id)
+        if (reload) {
+            setReload(false)
+        } else {
+            setReload(true)
+        }
+    }
+
+
 
     return (
         <tr>
@@ -12,7 +27,7 @@ export function ContactInfoRow(props) {
                 <div id="home-menu-list">
                     <div id="home-menu-list-float">
                         <Link id="bt-update">Update</Link>
-                        <Link id="bt-delete">Delete</Link>
+                        <Link id="bt-delete" onClick={() => deleteById(id)}>Delete</Link>
                     </div>
 
                 </div>

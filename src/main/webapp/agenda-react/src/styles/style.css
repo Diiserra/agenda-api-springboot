@@ -65,16 +65,16 @@ body{
     font-size: 18px;
 }
 
-.bt-started {
+.bt-gradient {
     text-decoration: none;
     font-family: 'Roboto';
     font-weight: 700;
-    font-size: 18px;
+    font-size: 14px;
     color: #fff;
     background-image: linear-gradient(to right, #4776E6  50%, #8E54E9   100%);
     margin: 18px;
-    padding: 16px 26px;
-    border-radius: 6px;
+    padding: 16px 36px;
+    border-radius: 12px;
 }
 
 
@@ -82,7 +82,6 @@ body{
 
 .home-container {
     margin: 0 15%;
-    display: block;
 }
 
 .home-container header{
@@ -149,6 +148,8 @@ table {
     color: #fff;
     font-family: 'Poppins', sans-serif;
 }
+
+.home-container main tbody {}
 
 .home-container main tbody div:nth-child(odd) {
     width: 100%;
@@ -229,14 +230,93 @@ table {
 }
 
 
-@keyframes menu {
-    0% {
-        transform: translateY(12px);
-    }
 
-    100% {
-        transform: translateY(22px);
-    }
+/*NewContactPage*/
+
+.new-contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7);
 }
+
+.new-contact-container h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    align-self: flex-start;
+}
+
+.new-contact-container h1::before {
+    content: "+";
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 0 12px;
+    margin-right: 8px;
+    background-image: linear-gradient(to right, #4776E6  50%, #8E54E9   100%);
+    border-radius: 16px;
+}
+
+.new-contact-container form {
+    width: 620px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: #21212b solid 3px;
+    border-radius: 16px;
+    padding: 26px;
+    margin-top: 12px;
+    margin-bottom: 24px;
+    background-color: #181820;
+}
+
+.new-contact-container form div {
+    height: 64px;
+    width: 380px;
+    margin-top: 18px;
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bt-cancel {
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    background-color: #181820;
+    border: #fff solid 2px;
+    margin: 18px;
+    padding: 14px 46px;
+    border-radius: 12px;
+}
+
+.text-input {
+    width: 60%;
+    height: 42px;
+    margin: 6px 6px;
+    border: #21212b solid 3px;
+    border-radius: 12px;
+    background-color: transparent;
+    outline: none;
+    font-family: 'Poppins';
+    font-size: 16px;
+    color: #bcbcbf;
+    padding-left: 12px;
+}
+
+.text-input:focus {
+    border: #4776E6 solid 3px;
+}
+
 
 

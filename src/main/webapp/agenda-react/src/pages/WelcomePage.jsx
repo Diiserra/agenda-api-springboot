@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { LinkButtonGradient } from "../components/LinkButtonGradient"
 import "../styles/style.css"
 
 
@@ -10,7 +10,7 @@ export function WelcomePage() {
             <div>
                 <h1>Welcome to phonebook!</h1>
                 <span>Your contacts are here.</span>
-                <Link className="bt-started" to="/home">Get Started</Link>
+                <LinkButtonGradient togo="/home" >Get started</LinkButtonGradient>
             </div>
             <svg id="svg-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                 <path fill="#4776E6" d="M47.6,-72.8C61.9,-64.9,73.8,-52,78.5,-37.2C83.3,-22.3,80.9,-5.5,79.2,11.9C77.5,29.3,76.5,47.4,67,57.8C57.6,68.3,39.7,71.2,22.6,75.6C5.5,80,-10.7,85.9,-22.5,80.6C-34.2,75.3,-41.5,58.8,-50.9,45.5C-60.3,32.2,-71.7,22.1,-78.1,8.4C-84.5,-5.3,-85.8,-22.5,-78.7,-35C-71.5,-47.4,-55.9,-55.1,-41.4,-62.9C-26.9,-70.7,-13.4,-78.7,1.6,-81.2C16.7,-83.7,33.3,-80.8,47.6,-72.8Z" transform="translate(100 100)" />
